@@ -59,7 +59,7 @@ rgba(0,88,131); tono claro*/
 	border-radius: 50%;	
 }
 
-.menu li a:hover{
+.menu > li > a:hover{
 	box-shadow: 0px 0px 24px -1px rgba(255,255,255,1);
 	/*background-color: rgba(0,88,131);*/
 	color: white;
@@ -74,21 +74,31 @@ rgba(0,88,131); tono claro*/
 	transition: opacity 1.2s;	
 }
 
+/*.subMenu > li{
+	position: relative;
+	display: inline-flex;
+}*/
+
 .submenu li a{
-	display: block;
-	padding: 24px;
+	padding: 5px;
 	color: white;
 	font-family: 'Franklin Gothic Heavy';
 	font-style: italic;
 	font-size: 25px;
 	text-decoration: none;
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 }
+
 
 .menu li:hover .submenu{
 	visibility: visible;
 	opacity: 1;
-	color: white;
+	color: white;	
+}
+
+.submenu li a:hover{
+	text-shadow: 0px 0px 30px rgba(0, 92, 255, 0.6);
+	font-size: 30px;
 }
 
 .ventana{
