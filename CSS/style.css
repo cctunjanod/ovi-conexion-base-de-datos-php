@@ -23,7 +23,7 @@ body{
 
 }
 
-img{
+.logoUNAD{
 	width: 15%;
 	position: fixed;
 }
@@ -323,4 +323,71 @@ iframe{
 	position: relative;
 	top: 150px;
 	margin-bottom: 50px;
+}
+
+.profile{
+	position: absolute;
+	top: 160px;
+	left: 33%;
+	background-color: white;
+	width: 500px;
+	height: 400px;	
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.perfil{
+	width: 35%;
+	position: absolute;
+	top: 2%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;	
+}
+
+.infProfile{
+	position: relative;
+	top:250px
+}
+
+.infProfile strong,label{
+	padding-bottom: 10px;
+	font-family: 'Angsana New';
+	font-size: x-large;
+}
+
+
+.contenedora{
+	position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	right: -300px; /* Establecemos la barra en la izquierda */
+	top: 100px; /* Bajamos la barra 270px de arriba a abajo */
+	z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */	
+	
+}
+
+.contenedora img .logoTwitter {
+	display: block;
+	position: absolute;
+	width: 60px; 
+	height: 60px;
+	transition: all 0.4s ease-in-out;
+	z-index: 1000;
+}
+
+	
+	.contenedora .twitter {
+		float: right;		
+		transform: translateX(90px);/*Desplazamos 300px a la izquierda*/
+		opacity: 1;
+		transition: all 0.4s ease-in-out;
+		background-color: rgba(19, 28, 28, 0.9);
+		height: 230px;
+	}
+
+	.contenedora:hover .twitter {
+	transform: translateX(-300px);/*Regresamos a su posicioón original*/
+}
+
+.contenedora:hover .logoTwitter{
+	transform: translateX(-300px);/*Desplazamos 300px a la derecha*/
 }
