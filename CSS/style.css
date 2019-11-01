@@ -19,19 +19,21 @@
 }
 
 body{
-	background: url('../IMG/wall.jpg') no-repeat; 
+	background: rgb(0,88,131); 
 
 }
 
 img{
 	width: 15%;
+	position: fixed;
 }
 
 .navegacion{
-	position: absolute;
+	position: fixed;
 	top: 20px;
 	left: 300px;
 	width: 1000px;
+	z-index: 10000;
 	/*margin: 30px auto;*/
 	background-color: rgba(0,0,0,0);
 }
@@ -68,6 +70,8 @@ rgba(0,88,131); tono claro*/
 
 .submenu{
 	position: absolute;
+	left: -90px;
+	display: -webkit-inline-box;
 	background-color: rgba(0,0,0,0);
 	visibility: hidden;
 	opacity: 0;
@@ -84,8 +88,10 @@ rgba(0,88,131); tono claro*/
 	color: white;
 	font-family: 'Franklin Gothic Heavy';
 	font-style: italic;
-	font-size: 25px;
+	font-size: 20px;
 	text-decoration: none;
+	border-left-color: white;
+	border-left-style: solid;
 	/*border-radius: 50%;*/
 }
 
@@ -137,8 +143,8 @@ rgba(0,88,131); tono claro*/
 
 .select{
 	position: absolute;
-	top: 250px;
-	left: 120px;	
+	top: 220px;
+	left: 170px;	
 }
 
 .insert{
@@ -188,7 +194,7 @@ rgba(0,88,131); tono claro*/
 
 .img{
 	width: 40%;
-	background-image: url(../IMG/databaseMinLol.png);
+	background-image: url(../IMG/databaseMin.png);
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -236,7 +242,7 @@ rgba(0,88,131); tono claro*/
 .container-text textarea{
 	margin-top: 20px;
 	font-family: 'Franklin Gothic Book';
-	font-size: 20px;	
+	font-size: 15px;	
 	background-color: rgba(5, 162, 255, 0.5);
 	border-radius: 15px;
 	padding: 5px;	
@@ -262,14 +268,13 @@ rgba(0,88,131); tono claro*/
 
 .info{
 	width: 100%;
-    max-width: 500px;
-    height: 280px;
+    max-width: 850px;
+    height: 222px;
     position: relative;
     display: flex;
     top: 15%;
     left: 60%;
-    transform: translate(-80%, 20%);
-    
+    transform: translate(-65%, 90%);
 }
 
 .info ul{
@@ -278,7 +283,7 @@ rgba(0,88,131); tono claro*/
 
 .menuInfo > li{
 	background-color: rgba(255,255,255,0.7);
-	padding: 20px;
+	padding: 10px;
 }
 
 .menuInfo > li:hover{
@@ -286,7 +291,7 @@ rgba(0,88,131); tono claro*/
 }
 
 .menuInfo > li > p{
-	width: 460px;
+	width: 880px;
 	color: rgba(3,12,59,1);
 	font-family: 'Angsana New';	
 	font-size: 40px;
@@ -297,14 +302,25 @@ rgba(0,88,131); tono claro*/
 }
 
 .subMenuInfo li p{
-	padding: 5px;
+	padding: 2px;
 	color: rgba(3,12,59,1);
 	font-family: 'Franklin Gothic Book';	
-	font-size: 30px;
+	font-size: 20px;
+}
+
+.subMenuInfo .liObj{
+	list-style-image: url('../IMG/listaMin.png');
+	margin-left: 10px;
 }
 
 .menuInfo li:hover .subMenuInfo{
 	display: block;
 	visibility: visible;
 	opacity: 1;
+}
+
+iframe{
+	position: relative;
+	top: 150px;
+	margin-bottom: 50px;
 }

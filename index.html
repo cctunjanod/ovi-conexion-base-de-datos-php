@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!--<link href="http://allfont.es/allfont.css?fonts=franklin-gothic-heavy" rel="stylesheet" type="text/css" />
+	<link href="http://allfont.es/allfont.css?fonts=franklin-gothic-book" rel="stylesheet" type="text/css" />	
+	<link href="//db.onlinewebfonts.com/c/e6a66ad34a680b8090172c85e4fece1d?family=Angsana+New" rel="stylesheet" type="text/css"/>-->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<img src="IMG/LOGO BLANCO UNAD.png">
+	<nav class="navegacion">
+		<ul class="menu">
+			<li><a href="index.html">INICIO</a></li>
+			<li><a href="lecturas.html">LECTURAS</a>
+				<ul class="submenu">
+					<li><a href="#ventanaBD">LECTURA 1</a></li>
+					<li><a href="#ventanaSelect">LECTURA 2</a></li>
+					<li><a href="#ventanaInsert">LECTURA 3</a></li>
+					<li><a href="#ventanaUpdate">LECTURA 4</a></li>
+					<li><a href="#ventanaDelete">LECTURA 5</a></li>
+				</ul>
+			</li>
+			<li><a href="#">MULTIMEDIA</a></li>
+			<li><a href="#">ACTIVIDADES</a>
+				<ul class="submenu">
+					<li><a href="actividades1-2.html">ACTIVIDADES 1-2</a></li>
+					<li><a href="actividades3-4.html">ACTIVIDADES 3-4</a></li>
+					<li><a href="actividades5-6.html">ACTIVIDADES 5-6</a></li>
+				</ul>
+			</li>
+			<li><a href="#">AUTORES</a></li>						
+		</ul>
+	</nav>
+	<nav class="info">
+		<ul class="menuInfo">
+			<li  class="infG"><p>Información General</p>
+				<ul class="subMenuInfo">
+					<li><p>Para la realización de este trabajo se procedió a crear una página web con el objetivo de dar a conocer como se desarrolla la implementación de una conexión de base de datos mediante PHP, además de esto también se mencionan las herramientas CRUD que son de gran importancia en el ámbito de las conexiones con bases de datos.
+					<br>
+					<br>
+					Por esto, la página web consta de varias herramientas divididas por secciones en las que se explicará de manera sencilla y detallada cada una de las funciones anteriormente mencionadas, con la ayuda de las diferentes herramientas que tiene la página, en las cuales hay contenido multimedia y un apartado donde se podrá poner a prueba  el conocimiento que se tiene con relación al tema.
+					</p></li>
+				</ul>
+			</li>
+			<li class="item"><p>Objetivos</p>
+				<ul class="subMenuInfo">
+					<li class="liObj"><p>Enseñar como realizar la conexion de una BD a través de PHP</p></li>
+					<li class="liObj"><p>Evidenciar las pricipales sentencias que se usan en relación con las bases de datos</p></li>
+					<li class="liObj"><p>Ofrecer diferentes medios para el aprendizaje</p></li>
+					<li class="liObj"><p>Poner a prueba los conocimientos adquiridos mediante las actividades propuestas</p></li>
+				</ul>
+			</li>
+			<li class="item"><p>Tematicas</p>
+				<ul class="subMenuInfo">
+					<li><p>La tematica de la página se centra en como establecer la conexion con una base de datos mediante PHP, sin embargo también se abarcan las sentencias que se encuentran embebidas en el tema central por lo que es de gran importancia hablar de ellas y sus funciones y como ejecutarlas.</p></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="container-all" id="ventanaBD">
+		<div class="popup">
+			<div class="img"></div>
+			<div class="container-text">
+				<h1>CONEXION A BASES DE DATOS EN PHP</h1>
+				<p>Es una gran herramienta ya que por medio de esta se puede hacer la página más dinamica además de permitir guardar datos, y tener control sobre estos según como sea necesario, cabe destacar que para el uso de PHP se necesita de un servidor para que este funcione; Uno de los más usado es LOCALHOST el cual se ejecuta mediante XAMPP o WAMP, esto con el fin de ejecutar el codigo PHP y tener la certeza de que trabaja sin problema alguno.</p>
+				<textarea class="code" readonly rows="6" cols="70"><?php
+
+/*cabe destacar que esto se desarrolla despues de haber instalado el servidor y tener la base de datos ya realizada*/
+
+$usuario="root";
+$contrasena="";
+$servidor="localhost"; 
+$database="nombre_de_la_base_de_datos";
+					
+$conexion = mysqli_connect( $servidor, $usuario, $contrasena ) or die 
+("No se ha podido conectar al servidor de Base de datos");
+
+$db = mysqli_select_db( $conexion, $database );
+
+/*de este modo se establace la conexion con la base de datos*/
+
+?></textarea>
+			</div>
+			<a href="#" class="btn-close-popup">X</a>
+		</div>
+	</div>
+	<div class="container-all" id="ventanaSelect">
+		<div class="popup">
+			<div class="img sel"></div>
+			<div class="container-text">
+				<h1>SENTENCIA SELECT</h1>
+				<p>Nos permite hacer consultas en una o más tablas de una base de datos, esto con el fin de mostrar o extraer la información que se necesite.</p>
+				<textarea class="code" readonly rows="7" cols="70"><?php
+
+/*Donde se encuentra el '*' se escriben los valores que se desean seleccionar de la que se especifica despues del 'FROM', sin embargo así con el '*' significa que se va a seleccionar todos los campos de la tabla */
+
+/*Se especiica la consulta*/
+$sql = "SELECT * FROM nombre_de_la_tabla";
+/*se ejecuta*/
+$result = mysqli_query($conn, $sql);
+
+/*este codigo es para mostrar la información consultada*/
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+?></textarea>
+			</div>
+			<a href="#" class="btn-close-popup">X</a>
+		</div>
+	</div>
+	<div class="container-all" id="ventanaInsert">
+		<div class="popup">
+			<div class="img ins"></div>
+			<div class="container-text">
+				<h1>SENTENCIA INSERT</h1>
+				<p>Con esta sentencia se ingresan nuevas filas en la tabla que se establezca en la consulta, de esto modo se "alimenta" la base de datos, teniendo información almacenada en ella.</p>
+				<textarea class="code" readonly rows="10" cols="70"><?php
+
+
+/*Cabe aclarar que si se van a ingresar todos los datos de la tabla en la base de datos, entonces no esnecesario especificar los campos a llenar, estos se especifican despues de nombrar la tabla en la que serán almacenados los datos, por ejemplo si hay un auto_increment como ese no se llena por medio de los formularios entonces es necesario especificar los demas campos que si se llenan por formulario*/
+
+$sql = "INSERT INTO nombre_de_la_tabla (especificar_valores_que_seran_ingresados) VALUES (datos_que_se_van_a_ingresar_en_la_tabla)";
+
+/*Los datos que se especifican y los que se "pasan" para ser ingresados en la tabla deben ser los mismos y en el mismo orden*/
+
+?></textarea>
+			</div>
+			<a href="#" class="btn-close-popup">X</a>
+		</div>
+	</div>
+	<div class="container-all" id="ventanaUpdate">
+		<div class="popup">
+			<div class="img upd"></div>
+			<div class="container-text">
+				<h1>SENTENCIA UPDATE</h1>
+				<p>Mediante esta sentencia se puede efectuar cambios en los datos que ya están en la tabla, por lo cual si durante el ingreso de los datos hubo un error pues de esta forma se puede reparar, o cual es una gran ventaja a la hora de tener los datos correctos en la base de datos.</p>
+				<textarea class="code" readonly rows="7" cols="70"><?php
+
+/*La sintaxis es la siguiente*/
+
+$sql = "UPDATE nombre_de_la_tabla SET campo_a_cambiar='valor_nuevo' WHERE condicional_para_especificar_cual_campo_sera_modificado";
+
+/*Hay que tener cuidado a la hora de hacer cambios ya que si en el WHERE no se espicifica cual campo de referencia  otro campo podría ser alterado*/
+
+?></textarea>
+			</div>
+			<a href="#" class="btn-close-popup">X</a>
+		</div>
+	</div>
+	<div class="container-all" id="ventanaDelete">
+		<div class="popup">
+			<div class="img del"></div>
+			<div class="container-text">
+				<h1>SENTENCIA DELETE</h1>
+				<p>Con esta sentencia se eliminan todos los datos de la tabla que se especifique, ya que al momento de especificar se toma de referencia toda la fila y por ende sus datos.</p>
+				<textarea class="code" readonly rows="7" cols="70"><?php
+
+/*La sintaxis es la siguiente*/
+
+$sql = "DELETE FROM nombre_de_la_tabla WHERE condicional_para_especificar_cual_fila_sera_eliminado";
+
+/*Hay que tener cuidado a la hora de hacer el WHERE ya que si no se espicifica la fila de referencia  otra fila podría ser eliminada*/
+
+?></textarea>
+			</div>
+			<a href="#" class="btn-close-popup">X</a>
+		</div>
+	</div>
+
+</body>
+</html>
