@@ -375,19 +375,47 @@ iframe{
 }
 
 	
-	.contenedora .twitter {
-		float: right;		
-		transform: translateX(90px);/*Desplazamos 300px a la izquierda*/
-		opacity: 1;
-		transition: all 0.4s ease-in-out;
-		background-color: rgba(19, 28, 28, 0.9);
-		height: 230px;
-	}
+.contenedora .twitter {
+	float: right;		
+	transform: translateX(90px);/*Desplazamos 300px a la izquierda*/
+	opacity: 1;
+	transition: all 0.4s ease-in-out;
+	background-color: rgba(19, 28, 28, 0.9);
+	height: 230px;
+}
 
-	.contenedora:hover .twitter {
+.contenedora:hover .twitter {
 	transform: translateX(-300px);/*Regresamos a su posicioón original*/
 }
 
 .contenedora:hover .logoTwitter{
 	transform: translateX(-300px);/*Desplazamos 300px a la derecha*/
 }
+
+.contador{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.footContact {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 20px;
+    color: #FFF;
+    text-align: center;
+    position: fixed;
+    top: 520px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.footContactTextES, .footContactTextEN {
+    width: 32%;
+    float: left;
+    font-size: 11px;
+    text-align: left;
+    line-height: 14px;
+}
+
